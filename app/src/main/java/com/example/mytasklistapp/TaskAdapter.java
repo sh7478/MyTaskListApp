@@ -1,5 +1,6 @@
 package com.example.mytasklistapp;
 
+import android.graphics.Paint;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -33,6 +34,7 @@ public class TaskAdapter extends RecyclerView.Adapter<TaskAdapter.TaskViewHolder
 
         holder.cbDone.setOnCheckedChangeListener((buttonView, isChecked) -> {
             currentTask.setDone(isChecked);
+            holder.tvTitle.setPaintFlags(isChecked ? Paint.STRIKE_THRU_TEXT_FLAG : 0);
         });
     }
 
